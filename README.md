@@ -4,6 +4,7 @@
 - Configured TailwindCSS into the app
 - Built header for login page
 - Login form
+- Google Firebase
 
 #Features
 
