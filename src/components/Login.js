@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-
+import { USER, BACKGROUND } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -42,8 +42,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg?w=460",
+            photoURL: USER,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -89,7 +88,7 @@ const Login = () => {
       <div>
         <img
           className="absolute object-cover w-full h-full "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ff5587c5-1052-47cf-974b-a97e3b4f0656/10922238-b880-476f-8a78-cb51cfa4f2c9/AE-en-20240506-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={BACKGROUND}
           alt="background"
         />
       </div>
